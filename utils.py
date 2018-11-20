@@ -35,3 +35,12 @@ def prefetching(query_path):
 	pkl_file.close()
 	
 	return input_list
+
+
+def isCorrect(gt_label, inferences_list):
+	for inference_label in inferences_list:
+		inference = str(inference_label[0]).split("_")[0]
+		if int(gt_label) == int(inference):
+			return True
+
+	return False

@@ -12,7 +12,7 @@ class SIFT():
 		self.sift = cv2.xfeatures2d.SIFT_create()
 		self.threshold = 0.75
 		self.indexedfolder = './sift'
-		self.thumbfolder = './thumb'
+		self.thumbfolder = './ResizeData'
 	
 	def dump_eachfile(self, img_name):
 		img_path = os.path.join(self.thumbfolder, img_name)
@@ -26,7 +26,7 @@ class SIFT():
 	
 	def dump_onefile(self):
 		dumpfile = open("siftdump.pkl","wb")
-		for img_path in glob.glob("./thumb/*.jpg"):
+		for img_path in glob.glob("./ResizeData/*.jpg"):
 			img_name = img_path.split("/")[2]
 			input_img = cv2.imread(img_path, 0)
 			kp, des = self.sift.detectAndCompute(input_img, None)
