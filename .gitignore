@@ -2,3 +2,6 @@ data/
 noise_output/
 venv/
 .idea/
+*.xml
+*.iml
+*.jpg
